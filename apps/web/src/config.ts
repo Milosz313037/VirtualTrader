@@ -8,7 +8,7 @@ interface Config {
 }
 
 export const config: Config = {
-    defaultLocale: 'en',
+    defaultLocale: 'pl',
     useCookies: import.meta.env.VITE_DEV_MODE !== 'electron',
 
     api: {

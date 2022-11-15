@@ -222,7 +222,7 @@ import {
     UserUpdateSelfPasswordDto,
     userUpdateSelfSchema,
     userUpdateSelfPasswordSchema,
-} from '@nx-vnts/shared';
+} from '@virtual-trader/shared';
 
 const accountStore = useAccountStore();
 const $q = useQuasar();

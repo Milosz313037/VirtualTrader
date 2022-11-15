@@ -21,7 +21,7 @@ import {
     UserUpdateSelfPasswordDto,
     PaginationResponse,
     PaginationDto,
-} from '@nx-vnts/shared';
+} from '@virtual-trader/shared';
 
 @Controller('/users')
 export class UsersController {

@@ -149,7 +149,7 @@
 <script setup lang="ts">
 import { Form } from 'vee-validate';
 import { api, usePromiseState, ResponseError } from '@/common';
-import { Role, UserProfileResponse, UserUpdateDto, userUpdateSchema } from '@nx-vnts/shared';
+import { Role, UserProfileResponse, UserUpdateDto, userUpdateSchema } from '@virtual-trader/shared';
 import { computed, ref, reactive, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';

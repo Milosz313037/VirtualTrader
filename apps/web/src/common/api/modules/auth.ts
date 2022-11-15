@@ -1,4 +1,4 @@
-import { AuthLoginDto, AuthLoginResponse } from '@nx-vnts/shared';
+import { AuthLoginDto, AuthLoginResponse } from '@virtual-trader/shared';
 import { $axios } from '../client';
 
 export async function login(authLoginDto: AuthLoginDto) {

@@ -1,5 +1,5 @@
 {
-  "app_name": "NX-VNTS",
+  "app_name": "VirtualTrader",
   "app_connection_lost": "Połączenie z serwerem zostało zerwane. Łączenie...",
 
   "yes": "Tak",
@@ -12,7 +12,7 @@
   "saved_successfully": "Wprowadzone zmiany zostały zapisane.",
 
   "routes_login": "Logowanie",
-  "routes_dashboard": "Dashboard",
+  "routes_dashboard": "Panel główny",
   "routes_users": "Użytkownicy",
   "routes_user": "Użytkownik",
   "routes_settings": "Ustawienia",

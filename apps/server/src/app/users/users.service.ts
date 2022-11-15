@@ -16,7 +16,7 @@ import {
     UserUpdateSelfPasswordDto,
     PaginationResponse,
     PaginationDto,
-} from '@nx-vnts/shared';
+} from '@virtual-trader/shared';
 
 @Injectable()
 export class UsersService {

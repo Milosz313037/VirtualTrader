@@ -1,4 +1,4 @@
-import { timeout } from '@nx-vnts/utils';
+import { timeout } from '@virtual-trader/utils';
 import { reactive, ref, shallowRef } from 'vue';
 import { createEventHook, EventHookOn } from '@vueuse/core';
 

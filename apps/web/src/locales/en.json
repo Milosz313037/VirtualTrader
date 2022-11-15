@@ -1,5 +1,5 @@
 {
-  "app_name": "NX-VNTS",
+  "app_name": "virtual-trader",
   "app_connection_lost": "Connection to the server has been lost. Connecting...",
 
   "yes": "Yes",

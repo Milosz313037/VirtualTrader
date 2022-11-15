@@ -1,4 +1,4 @@
-import { Role } from '@nx-vnts/shared';
+import { Role } from '@virtual-trader/shared';
 import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Session } from './session.entity';
 

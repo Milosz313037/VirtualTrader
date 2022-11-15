@@ -1,5 +1,5 @@
 import { object, SchemaOf, setLocale, string } from 'yup';
-import { UseSchema, yupLocale } from '@nx-vnts/utils';
+import { UseSchema, yupLocale } from '@virtual-trader/utils';
 
 setLocale(yupLocale);
 

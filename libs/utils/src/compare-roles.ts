@@ -1,4 +1,4 @@
-import { Role, rolesByImportance } from '@nx-vnts/shared';
+import { Role, rolesByImportance } from '@virtual-trader/shared';
 
 export function compareRoles(role1: Role, role2: Role): number {
     if (rolesByImportance.indexOf(role1) > rolesByImportance.indexOf(role2)) return 1;

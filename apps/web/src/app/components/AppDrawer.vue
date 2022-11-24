@@ -15,10 +15,10 @@
             </div>
 
             <q-list padding>
-                <div class="menu-title">
+                <!-- <div class="menu-title">
                     <div class="title">{{ $t('menu_main_title') }}</div>
                     <div class="caption">{{ $t('menu_main_caption') }}</div>
-                </div>
+                </div> -->
 
                 <q-item
                     v-if="userHasPermission('dashboard')"
@@ -45,13 +45,6 @@
 
                     <q-item-section>{{ routeTitle('users') }}</q-item-section>
                 </q-item>
-            </q-list>
-
-            <q-list padding>
-                <div class="menu-title">
-                    <div class="title">{{ $t('menu_account_title') }}</div>
-                    <div class="caption">{{ $t('menu_account_caption') }}</div>
-                </div>
 
                 <q-item
                     v-if="userHasPermission('settings')"

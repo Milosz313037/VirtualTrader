@@ -4,9 +4,6 @@
             <div class="text-right q-pa-sm">
                 <div class="account-name">{{ accountStore.state.fullname }}</div>
                 <div class="account-type">
-                    {{
-                        accountStore.state.position ? `${accountStore.state.position} &bull; ` : ''
-                    }}
                     {{ accountStore.state.roleName }}
                 </div>
             </div>

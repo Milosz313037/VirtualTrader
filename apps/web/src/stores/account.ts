@@ -18,10 +18,8 @@ interface State {
     role: Role;
     firstName: string;
     lastName: string;
-    position: string;
     avatar: string;
     createdAt: Date | null;
-
     fullname: string;
     roleName: string;
 }
@@ -42,7 +40,6 @@ export const useAccountStore = defineStore('account', () => {
         role: null,
         avatar: '',
         firstName: '',
-        position: '',
         lastName: '',
         createdAt: null,
     };
@@ -79,7 +76,6 @@ export const useAccountStore = defineStore('account', () => {
         state.role = data.role;
         state.firstName = data.firstName;
         state.lastName = data.lastName;
-        state.position = data.position;
         state.avatar = data.avatar;
         state.createdAt = new Date(data.createdAt);
     }

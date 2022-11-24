@@ -24,7 +24,6 @@
                                     :modelValue="accountStore.state.email"
                                     :label="$t('settings_general_email')"
                                     outlined
-                                    readonly
                                 >
                                     <template v-slot:prepend>
                                         <q-icon name="mdi-at" />
@@ -54,32 +53,6 @@
                                 >
                                     <template v-slot:prepend>
                                         <q-icon name="mdi-account" />
-                                    </template>
-                                </VInput>
-
-                                <VInput
-                                    class="col-12 col-md-6"
-                                    name="role"
-                                    :modelValue="$t(`roles_${accountStore.state.role}`)"
-                                    :label="$t('settings_general_role')"
-                                    outlined
-                                    readonly
-                                >
-                                    <template v-slot:prepend>
-                                        <q-icon name="mdi-shield-star" />
-                                    </template>
-                                </VInput>
-
-                                <VInput
-                                    class="col-12 col-md-6"
-                                    name="position"
-                                    v-model="generalForm.position"
-                                    :disable="saveGeneralAction.isLoading"
-                                    :label="$t('settings_general_form_position')"
-                                    outlined
-                                >
-                                    <template v-slot:prepend>
-                                        <q-icon name="mdi-school" />
                                     </template>
                                 </VInput>
                             </div>
@@ -235,7 +208,6 @@ const isRepeatPasswordVisible = ref(false);
 const generalForm = reactive<UserUpdateSelfDto>({
     firstName: accountStore.state.firstName,
     lastName: accountStore.state.lastName,
-    position: accountStore.state.position,
 });
 
 const passwordForm = reactive<UserUpdateSelfPasswordDto>({

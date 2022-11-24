@@ -32,11 +32,6 @@ export class User extends BaseEntity {
     lastName: string;
 
     @Column({
-        nullable: true,
-    })
-    position: string;
-
-    @Column({
         default: true,
     })
     isActive: boolean;

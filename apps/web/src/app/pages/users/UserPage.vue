@@ -91,19 +91,6 @@
 
                             <VInput
                                 class="col-12 col-md-6"
-                                name="position"
-                                v-model="form.position"
-                                :disable="saveAction.isLoading"
-                                :label="$t('users_form_position')"
-                                outlined
-                            >
-                                <template v-slot:prepend>
-                                    <q-icon name="mdi-school" />
-                                </template>
-                            </VInput>
-
-                            <VInput
-                                class="col-12 col-md-6"
                                 name="password"
                                 :type="isPasswordVisible ? 'text' : 'password'"
                                 v-model="form.password"
@@ -173,7 +160,6 @@ const booleanSelectionTable = [
 const form = reactive<UserUpdateDto>({
     firstName: '',
     lastName: '',
-    position: '',
     password: '',
     role: Role.User,
     isActive: true,
@@ -182,7 +168,6 @@ const form = reactive<UserUpdateDto>({
 function loadForm(data: UserProfileResponse) {
     form.firstName = data.firstName;
     form.lastName = data.lastName;
-    form.position = data.position;
     form.password = '';
     form.role = data.role;
     form.isActive = data.isActive;

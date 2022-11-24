@@ -9,6 +9,8 @@
   "cancel": "Anuluj",
   "search": "Wyszukaj",
   "edit": "Edycja",
+  "buy": "Kup",
+  "sell": "Sprzedaj",
   "saved_successfully": "Wprowadzone zmiany zostały zapisane.",
 
   "routes_login": "Logowanie",
@@ -45,6 +47,7 @@
   "login_welcome_title": "Panel kontrolny",
   "login_welcome_description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat quas officiis nisi consequatur optio repudiandae corporis. Quos, iste labore? Laboriosam odio enim deserunt sunt illo commodi nostrum in praesentium suscipit autem, ea deleniti consectetur aspernatur fuga minima obcaecati corrupti iusto aliquid voluptatem! Repellat itaque voluptas facilis dolore expedita? Consectetur, facere!",
   "login_form_login": "Nazwa użytkownika",
+  "login_form_email": "E-mail",
   "login_form_password": "Hasło",
   "login_form_remember": "Zapamiętaj mnie",
   "login_form_signin": "Zaloguj się",
@@ -76,6 +79,16 @@
   "users_list_role": "Rola",
   "users_list_created_at": "Utworzony",
   "users_select_search": "Wyszukaj użytkownika",
+
+  "your_balance": "Twoje saldo: {balance}",
+  "change_balance": "Zmień saldo",
+  "number_of_coins": "Liczba coinów",
+  "exchange": "Kurs",
+  "coin_name": "Nazwa coina",
+  "margin": "Marża",
+  "profit_loss": "Zysk / Strata",
+
+  "coin_dogecoin": "Dogecoin",
   
   "settings_general_title": "Ogólne",
   "settings_general_role": "Rola",

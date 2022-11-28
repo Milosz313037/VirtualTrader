@@ -22,6 +22,7 @@ interface State {
     createdAt: Date | null;
     fullname: string;
     roleName: string;
+    balance: number;
 }
 
 export const useAccountStore = defineStore('account', () => {
@@ -42,6 +43,7 @@ export const useAccountStore = defineStore('account', () => {
         firstName: '',
         lastName: '',
         createdAt: null,
+        balance: null,
     };
 
     const state: State = reactive({
@@ -78,6 +80,7 @@ export const useAccountStore = defineStore('account', () => {
         state.lastName = data.lastName;
         state.avatar = data.avatar;
         state.createdAt = new Date(data.createdAt);
+        state.balance = data.balance;
     }
 
     function refreshAuthState(): void {

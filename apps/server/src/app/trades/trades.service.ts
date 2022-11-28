@@ -9,11 +9,8 @@ import { User } from '@/app/db/user.entity';
 import { hashPassword } from '@/app/auth/utils/hash-password';
 import { ConfigService } from '@nestjs/config';
 import {
-    UserProfileResponse,
-    UserCreateDto,
-    UserUpdateDto,
-    UserUpdateSelfDto,
-    UserUpdateSelfPasswordDto,
+    TradeProfileResponse,
+    TradeCreateDto,
     PaginationResponse,
     PaginationDto,
 } from '@virtual-trader/shared';

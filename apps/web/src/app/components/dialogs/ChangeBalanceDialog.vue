@@ -2,68 +2,21 @@
     <AppDialog icon="mdi-plus" :title="$t('change_balance')" v-slot="{ ok, cancel }">
         <Form
             @submit="saveAction.execute(500, ok)"
-            :validation-schema="userCreateSchema"
+            :validation-schema="userUpdateSelfBalanceSchema"
             :initial-values="form"
         >
             <q-card-section class="scroll" style="max-height: 50vh">
                 <div class="row q-col-gutter-md">
                     <VInput
                         class="col-12"
-                        name="firstName"
-                        v-model="form.firstName"
+                        name="balance"
+                        v-model="form.balance"
                         :disable="saveAction.isLoading"
-                        :label="$t('users_create_first_name')"
+                        :label="$t('balance')"
                         outlined
                     >
                         <template v-slot:prepend>
                             <q-icon name="mdi-account" />
-                        </template>
-                    </VInput>
-
-                    <VInput
-                        class="col-12"
-                        name="lastName"
-                        v-model="form.lastName"
-                        :disable="saveAction.isLoading"
-                        :label="$t('users_create_last_name')"
-                        outlined
-                    >
-                        <template v-slot:prepend>
-                            <q-icon name="mdi-account" />
-                        </template>
-                    </VInput>
-
-                    <VInput
-                        class="col-12"
-                        name="email"
-                        v-model="form.email"
-                        :disable="saveAction.isLoading"
-                        :label="$t('users_create_email')"
-                        :error="isUserExistsError"
-                        outlined
-                    >
-                        <template v-slot:prepend>
-                            <q-icon name="mdi-at" />
-                        </template>
-                    </VInput>
-
-                    <VInput
-                        class="col-12"
-                        name="password"
-                        :type="isPasswordVisible ? 'text' : 'password'"
-                        v-model="form.password"
-                        :disable="saveAction.isLoading"
-                        :label="$t('users_create_password')"
-                        outlined
-                    >
-                        <template v-slot:prepend>
-                            <q-icon name="mdi-lock" />
-                        </template>
-                        <template v-slot:append>
-                            <q-icon
-                                :name="isPasswordVisible ? 'mdi-eye' : 'mdi-eye-off'"
-                                @click="isPasswordVisible = !isPasswordVisible"
-                            />
                         </template>
                     </VInput>
                 </div>
@@ -100,7 +53,7 @@
 
 <script setup lang="ts">
 import { Form } from 'vee-validate';
-import { UserCreateDto, userCreateSchema } from '@virtual-trader/shared';
+import { UserUpdateSelfBalanceDto, userUpdateSelfBalanceSchema } from '@virtual-trader/shared';
 import { useI18n } from 'vue-i18n';
 import { computed, reactive, ref, watch } from 'vue';
 import { api, usePromiseState, ResponseError } from '@/common';
@@ -109,13 +62,8 @@ import { useQuasar } from 'quasar';
 const $q = useQuasar();
 const { t } = useI18n();
 
-const isPasswordVisible = ref(false);
-
-const form = reactive<UserCreateDto>({
-    email: '',
-    firstName: '',
-    lastName: '',
-    password: '',
+const form = reactive<UserUpdateSelfBalanceDto>({
+    balance: '',
 });
 
 const saveAction = usePromiseState<void, ResponseError>(async (ok: () => void) => {
@@ -133,7 +81,7 @@ const saveAction = usePromiseState<void, ResponseError>(async (ok: () => void) =
 
 const saveError = computed<string>(() => {
     if (saveAction.error && saveAction.error.response.status === 409)
-        return t('users_create_errors_user_exists');
+        return t('users_create_change_balance_error');
 
     if (saveAction.error) return t('users_create_errors_default');
 

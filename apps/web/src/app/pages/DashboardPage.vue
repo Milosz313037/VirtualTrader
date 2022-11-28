@@ -52,6 +52,18 @@
                     v-model:pagination="pagination"
                     :rows-per-page-options="[5, 10, 20, 50]"
                 >
+                <template v-slot:body-cell-edit="props">
+                        <q-td class="text-right">
+                            <q-btn
+                                v-if="props.value !== accountStore.state.id"
+                                size="10px"
+                                round
+                                color="secondary"
+                                icon="mdi-cog"
+                                :to="{ name: 'user', params: { id: props.value } }"
+                            />
+                        </q-td>
+                    </template>
                 </q-table>
             </q-card-section>
         </AppCard>
@@ -67,7 +79,9 @@ import BuyDialog from '@/app/components/dialogs/BuyDialog.vue';
 import SellDialog from '@/app/components/dialogs/SellDialog.vue';
 import ChangeBalanceDialog from '@/app/components/dialogs/ChangeBalanceDialog.vue';
 import { useI18n } from 'vue-i18n';
+import { useAccountStore } from '@/stores/account';
 
+const accountStore = useAccountStore();
 const $q = useQuasar();
 const { t } = useI18n();
 
@@ -124,6 +138,12 @@ const columns: QTableColumn<UserProfileResponse>[] = [
             }),
         align: 'left',
         sortable: true,
+    },
+    {
+        name: 'edit',
+        label: t('edit'),
+        field: 'id',
+        align: 'right',
     },
 ];
 

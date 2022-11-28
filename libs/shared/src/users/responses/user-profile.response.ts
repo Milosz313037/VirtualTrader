@@ -6,8 +6,8 @@ export interface UserProfileResponse {
     email: string;
     firstName: string;
     lastName: string;
-    position: string;
     avatar: string;
     isActive: boolean;
     createdAt: Date;
+    balance: number;
 }

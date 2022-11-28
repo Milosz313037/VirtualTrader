@@ -37,6 +37,11 @@ export class User extends BaseEntity {
     isActive: boolean;
 
     @Column({
+        default: 1000,
+    })
+    balance: number;
+
+    @Column({
         default: () => 'CURRENT_TIMESTAMP',
     })
     createdAt: Date;

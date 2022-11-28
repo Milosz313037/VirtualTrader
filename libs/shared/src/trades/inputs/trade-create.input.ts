@@ -8,7 +8,7 @@ export const tradeCreateSchema: SchemaOf<TradeCreateDto> = object().shape({
     quantity: number().required(),
     exchange: number().required(),
     margin: number().required(),
-    coin: mixed().required().oneOf(Object.values(Coin))
+    coin: mixed().required().oneOf(Object.values(Coin)),
 });
 
 @UseSchema(tradeCreateSchema)

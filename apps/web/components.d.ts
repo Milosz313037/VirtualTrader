@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     RouterView: typeof import('vue-router')['RouterView']
     SellCreateDialog: typeof import('./src/app/components/dialogs/SellCreateDialog.vue')['default']
     SellDialog: typeof import('./src/app/components/dialogs/SellDialog.vue')['default']
+    TicketCreateDialog: typeof import('./src/app/components/dialogs/TicketCreateDialog.vue')['default']
     TradeCreateDialog: typeof import('./src/app/components/dialogs/TradeCreateDialog.vue')['default']
     UserCreateDialog: typeof import('./src/app/components/dialogs/UserCreateDialog.vue')['default']
     UserHeader: typeof import('./src/app/components/headers/UserHeader.vue')['default']

@@ -86,9 +86,13 @@
   "change_balance": "Zmień saldo",
   "number_of_coins": "Liczba coinów",
   "exchange": "Kurs",
-  "coin_name": "Nazwa coina",
+  "crypto_name": "Nazwa kryptowaluty",
+  "ticket_name": "Nazwa kuponu",
+  "fiat_name": "Waluta",
   "margin": "Marża",
   "profit_loss": "Zysk / Strata",
+  "new_ticket": "Nowy kupon",
+  "start_saldo": "Saldo startowe",
 
   "coin_dogecoin": "Dogecoin",
   

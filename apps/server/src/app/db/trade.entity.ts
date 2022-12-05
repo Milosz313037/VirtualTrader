@@ -1,4 +1,4 @@
-import { Coin } from '@virtual-trader/shared';
+import { Action } from '@virtual-trader/shared';
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'trades' })
@@ -6,24 +6,17 @@ export class Trade extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column()
-    quantity: number;
+    @Column({
+        type: 'enum',
+        enum: Action,
+    })
+    action: Action;
 
     @Column()
     exchange: number;
 
     @Column()
-    margin: number;
-
-    @Column()
-    profit: number;
-
-    @Column({
-        type: 'enum',
-        enum: Coin,
-        default: Coin.Dogecoin,
-    })
-    role: Coin;
+    quantity: number;
 
     @Column({
         default: () => 'CURRENT_TIMESTAMP',

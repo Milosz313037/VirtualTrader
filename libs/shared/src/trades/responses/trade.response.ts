@@ -1,11 +1,9 @@
-import { Coin } from '../../common';
+import { Action } from '../../common';
 
 export interface TradeProfileResponse {
     id: string;
-    quantity: number;
+    action: Action;
     exchange: number;
-    margin: number;
-    profit: number;
-    coin: Coin;
+    quantity: number;
     createdAt: Date;
 }

@@ -1,20 +1,18 @@
 import { mixed, number, object, SchemaOf, setLocale } from 'yup';
 import { UseSchema, yupLocale } from '@virtual-trader/utils';
-import { Coin } from '../../common';
+import { Action } from '../../common';
 
 setLocale(yupLocale);
 
 export const tradeCreateSchema: SchemaOf<TradeCreateDto> = object().shape({
-    quantity: number().required(),
+    action: mixed().required().oneOf(Object.values(Action)),
     exchange: number().required(),
-    margin: number().required(),
-    coin: mixed().required().oneOf(Object.values(Coin)),
+    quantity: number().required(),
 });
 
 @UseSchema(tradeCreateSchema)
 export class TradeCreateDto {
-    quantity: number;
+    action: Action;
     exchange: number;
-    margin: number;
-    coin: Coin;
+    quantity: number;
 }

@@ -4,9 +4,6 @@
             <h5 class="q-my-none q-mt-sm text-weight-bold">
                 {{ $t('dashboard_welcome', { name: accountStore.state.firstName }) }}
             </h5>
-            <p class="q-mb-sm">
-                {{ $t('your_balance', { balance: accountStore.state.balance }) }}
-            </p>
         </div>
     </div>
 </template>

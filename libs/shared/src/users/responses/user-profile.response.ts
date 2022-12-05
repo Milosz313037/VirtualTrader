@@ -9,5 +9,4 @@ export interface UserProfileResponse {
     avatar: string;
     isActive: boolean;
     createdAt: Date;
-    balance: number;
 }

@@ -6,38 +6,15 @@
 
         <AppCard>
             <q-card-section>
-                <div class="row q-gutter-x-sm justify-end">
-                    <div class="text-right self-center">
-                        <q-btn
-                            icon="mdi-wallet"
-                            :label="$t('change_balance')"
-                            :disable="usersAction.isLoading"
-                            color="primary"
-                            rounded
-                            @click="changeBalanceDialog"
-                        />
-                    </div>
-                    <q-space />
-                    <div class="text-right self-center">
-                        <q-btn
-                            icon="mdi-plus"
-                            :label="$t('buy')"
-                            :disable="usersAction.isLoading"
-                            color="green"
-                            rounded
-                            @click="buyDialog"
-                        />
-                    </div>
-                    <div class="text-right self-center">
-                        <q-btn
-                            icon="mdi-minus"
-                            :label="$t('sell')"
-                            :disable="usersAction.isLoading"
-                            color="red"
-                            rounded
-                            @click="sellDialog"
-                        />
-                    </div>
+                <div class="text-right self-center">
+                    <q-btn
+                        icon="mdi-plus"
+                        :label="$t('new_ticket')"
+                        :disable="usersAction.isLoading"
+                        color="secondary"
+                        rounded
+                        @click="ticketCreateDialog"
+                    />
                 </div>
 
                 <q-table
@@ -52,7 +29,7 @@
                     v-model:pagination="pagination"
                     :rows-per-page-options="[5, 10, 20, 50]"
                 >
-                <template v-slot:body-cell-edit="props">
+                    <template v-slot:body-cell-edit="props">
                         <q-td class="text-right">
                             <q-btn
                                 v-if="props.value !== accountStore.state.id"
@@ -75,9 +52,7 @@ import { api, usePromiseState, ResponseError } from '@/common';
 import { PaginationResponse, UserProfileResponse } from '@virtual-trader/shared';
 import { ref } from 'vue';
 import { QTableColumn, QTableProps, useQuasar } from 'quasar';
-import BuyDialog from '@/app/components/dialogs/BuyDialog.vue';
-import SellDialog from '@/app/components/dialogs/SellDialog.vue';
-import ChangeBalanceDialog from '@/app/components/dialogs/ChangeBalanceDialog.vue';
+import TicketCreateDialog from '@/app/components/dialogs/TicketCreateDialog.vue';
 import { useI18n } from 'vue-i18n';
 import { useAccountStore } from '@/stores/account';
 
@@ -171,26 +146,12 @@ const usersAction = usePromiseState<PaginationResponse<UserProfileResponse>, Res
 
 usersAction.execute(500, pagination.value);
 
-function buyDialog(): void {
+function ticketCreateDialog(): void {
     $q.dialog({
-        component: BuyDialog,
+        component: TicketCreateDialog,
     }).onOk(() => {
         usersAction.execute(500, pagination.value);
     });
 }
 
-function sellDialog(): void {
-    $q.dialog({
-        component: SellDialog,
-    }).onOk(() => {
-        usersAction.execute(500, pagination.value);
-    });
-}
-function changeBalanceDialog(): void {
-    $q.dialog({
-        component: ChangeBalanceDialog,
-    }).onOk(() => {
-        usersAction.execute(500, pagination.value);
-    });
-}
 </script>
